@@ -1,5 +1,5 @@
 import React , { useEffect, useState } from "react";
-import api from 'axios';
+import api from './services/api';
 
 import {
   SafeAreaView,
@@ -15,9 +15,9 @@ export default function App() {
   const [repositories, setRepositories] = useState([]);
 
   useEffect(() => {
-    api.get('repositories').then(response => {
+    api.get('repositories').then(response=> {
       setRepositories(response.data);
-    })
+    });
   }, []);
 
 
